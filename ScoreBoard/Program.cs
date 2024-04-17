@@ -21,9 +21,10 @@ app.UseStaticFiles();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+    pattern: "{controller=Dashboard}/{action=Index}/{id?}"
+    );
 
-
+DbSeeder.Seed(app);
 
 
 app.Run();
