@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ScoreBoard.Models.Joueur>
+﻿@model IEnumerable<ScoreBoard.Models.Jeu>
 
 @{
     ViewData["Title"] = "Index";
@@ -16,16 +16,19 @@
                 @Html.DisplayNameFor(model => model.Nom)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Prenom)
+                @Html.DisplayNameFor(model => model.DateSortie)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Equipe)
+                @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Telephone)
+                @Html.DisplayNameFor(model => model.Joueur)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Courriel)
+                @Html.DisplayNameFor(model => model.ScoreJoueur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateEnregistrement)
             </th>
             <th></th>
         </tr>
@@ -37,16 +40,19 @@
                 @Html.DisplayFor(modelItem => item.Nom)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Prenom)
+                @Html.DisplayFor(modelItem => item.DateSortie)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Equipe)
+                @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Telephone)
+                @Html.DisplayFor(modelItem => item.Joueur.Courriel)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Courriel)
+                @Html.DisplayFor(modelItem => item.ScoreJoueur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateEnregistrement)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

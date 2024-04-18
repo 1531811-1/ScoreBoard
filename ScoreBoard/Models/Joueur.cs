@@ -21,5 +21,7 @@ namespace ScoreBoard.Models
         public string Courriel { get; set; }
         [Required][RegularExpression(@"[A-Z]{2,4})", ErrorMessage = "Le champs équipe doit avoir 2 à 4 lettres majuscules.")]
         public List<Jeu>? Jeux { get; set; }
-    }
+
+		public int TotalScore { get; set; }
+	}
 }
