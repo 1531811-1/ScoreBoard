@@ -14,7 +14,6 @@ namespace ScoreBoard.Models
 
 		public static void Seed(IApplicationBuilder applicationBuilder)
 		{
-			// Retrieve ScoreBoardDbContext from the applicationBuilder
 			using (var scope = applicationBuilder.ApplicationServices.CreateScope())
 			{
 				var services = scope.ServiceProvider;

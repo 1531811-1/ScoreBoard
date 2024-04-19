@@ -16,19 +16,19 @@ namespace ScoreBoard.Controllers
 
 		public IActionResult Index()
 		{
-			// Get player scores from the database
+			// Get score joueur de la base de donnée
 			var joueurs = _context.Joueurs.ToList();
 
-			// Calculate total score for each player
+			// Calcule score total de chaque joueur
 			foreach (var joueur in joueurs)
 			{
 				joueur.TotalScore = joueur.Jeux.Sum(j => j.ScoreJoueur);
 			}
 
-			// Sort players by total score in descending order
+			// Sort le score total des joueurs
 			var topJoueurs = joueurs.OrderByDescending(p => p.TotalScore).ToList();
 
-			// Create DashboardViewModel and pass top players to the view
+			// Create DashboardViewModel et passe les meilleurs joeurus à la vue
 			var viewModel = new DashboardViewModel
 			{
 				TopJoueurs = topJoueurs
